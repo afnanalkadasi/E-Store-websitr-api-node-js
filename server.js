@@ -24,22 +24,29 @@ server.get('/contact', (_, res) => {
 
 server.get('/product', (_, res) => {
     res.render('product');
+  
+});
+server.get('/product/:id', (_, res) => {
+    var xhr = new XMLHttpRequest();
+    xhr.open("GET", "https://reqres.in/api/products/1", true);
+    xhr.onload = function(){
+        console.log(xhr.responseText);
+    };
+    xhr.send();
+});
+server.get('/product/search?q=phone', (_, res) => {
+
+});
+server.get('/products/categories', (_, res) => {
+
+});
+
+server.get('/products/category/smartphones', (_, res) => {
+
 });
 server.get('/testimonial', (_, res) => {
     res.render('testimonial');
 });
-
-// server.get('/admin', (req, res) => {
-
-//     if (req.url.includes("?role")) {
-//         if (req.query.role.toLocaleLowerCase() == 'admin')
-//             res.render('admin', { title: args.admin, message: " hellow admin" });
-//         else
-//             res.render('login', { title: args.login });
-//     } else
-//         res.render('login', { title: args.login });
-// });
-
 
 
 server.use((_, res) => {
