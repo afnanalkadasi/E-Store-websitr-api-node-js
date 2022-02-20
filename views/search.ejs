@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+              <% products.forEach(product => { %>
+                <div class="box">
+                        <div class="box-content">
+                          <div class="img-box">
+                            <img  src="<%= product.thumbnail %> " alt="">
+                          </div>
+                          <div class="detail-box">
+                            <div class="text">
+                              <h6 >
+                                      <%= product.title %>
+                              </h6>
+                              <h5 >
+                                <span>$</span> <%= product.price %>
+                              </h5>
+                            </div>
+                            <div class="like">
+                              
+                              <div class="star_container">
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="text">
+                            <p><%= product.description %></p>
+                          </div>
+                        </div>
+                       
+                        <div class="btn-box">
+                          <a href="" >
+                            Add To Cart
+                          </a>
+                        </div>
+                      </div>
+                <% }) %>
+                
+  
+</body>
+</html>
