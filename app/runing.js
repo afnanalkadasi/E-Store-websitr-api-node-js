@@ -1,8 +1,6 @@
-
-
 var app = require('../server');
 var http = require('http');
-var port = normalizePort(process.env.PORT || '22000');
+var port = normalizePort(process.env.PORT || '33000');
 app.set('port', port);
 
 
