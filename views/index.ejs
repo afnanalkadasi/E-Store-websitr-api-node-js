@@ -281,7 +281,7 @@
                     <div class="navbar-nav w-100 overflow-hidden" style="height: 410px">
                         <% products.forEach(product => { %>
                         <li class="nav-item ">
-                            <a class="nav-link" href="" > <h5><%=product.category %></h5></a>
+                            <a class="nav-link" href="/products/category/<%=product.category%>" > <h5><%=product.category%></h5></a>
                           </li>
                         <%})%>
                     </div>
@@ -291,7 +291,7 @@
           
 
   
-    <div class="product_container col-lg-9 product" >
+    <div class="product_container col-lg-9 product">
     <% for( let index = 0; index < 3 ; index++ ) { %>
       <div class="box">
         <div class="box-content">
@@ -303,7 +303,7 @@
           <div class="detail-box">
             <div class="text">
               <h6 >
-                  <a href="<%= products[index].id %>"> 
+                  <a href="/products/<%= products[index].id %>"> 
                       <%= products[index].title %>
                   </a>
               </h6>

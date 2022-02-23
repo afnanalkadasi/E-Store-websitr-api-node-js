@@ -16,12 +16,10 @@
       <div class="container">
             <% if (products.length > 0 ) {%>
                 <% products.forEach(product => {%>
-        <div class="product_heading">
+        <div class="product_heading mb-0" style="display: inline-block">
                         <h2>
-                            <%=product %>
-                    </h2>
-
-                    
+                            <a class="nav-link" href="" style="color: white">    <%=product %> </a>
+                        </h2>
         </div>
         <%})%>
         <%} else {%>
@@ -30,7 +28,7 @@
       </div>
     </section> 
   
-    
+  
    <!-- end client section -->
    <%- include('../partials/footer.ejs'); %>
    <!-- end client section -->

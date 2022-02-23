@@ -6,8 +6,7 @@ const axios = require('axios').default;
 server.get('/', async(req, res, next) => {
   try{
 let response = await axios.get('https://dummyjson.com/products');
-let category = await axios.get('https://dummyjson.com/products/categories');
-res.render('index', {products: response.data.products, products: category.data });
+res.render('index', {products: response.data.products });
   }catch(err){
     console.log(err);
   }
@@ -50,19 +49,6 @@ server.get('/products/categories',async(req, res, next) => {
 });
 
 
-server.get('/products/category/:category',async(req, res, next) => {
-  try {
-    const category = req.params.category;
-    let response = await axios.get(
-      `https://dummyjson.com/products/category/${category}`
-    );
-    res.render('category', {
-      products: response.data.category,
-    });
-  } catch (err) {
-    console.log(err);
-  }
-});
 
 
 server.get('/products/search', async (req, res, next) => {
@@ -82,7 +68,24 @@ server.get('/products/search', async (req, res, next) => {
 });
   
 
-server.get('/products/:id', async (req, res, next) => {
+
+
+
+server.get('/products/category/:category',async(req, res, next) => {
+  try { 
+    const category = req.params.category;
+    let response = await axios.get(
+      `https://dummyjson.com/products/category/${category}`
+    );
+    res.render('category', {
+      products: response.data.products,
+    });
+  } catch (err) {
+    console.log(err);
+  }
+});
+
+server.get('/products/:id([0-9],{0-10})', async (req, res, next) => {
   try {
     const productId = req.params.id;
     let response = await axios.get(
@@ -97,10 +100,6 @@ server.get('/products/:id', async (req, res, next) => {
     res.send('<h1>Sorry There are no products to display.....</h1>')
   }
 });
-
-
-
-
 
 
 // server.get('/products/category/smartphones', (_, res) => {
