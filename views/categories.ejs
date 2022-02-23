@@ -12,21 +12,26 @@
 
    <!-- product section -->
 
-   <section class="product_section ">
-      <div class="container">
-            <% if (products.length > 0 ) {%>
-                <% products.forEach(product => {%>
-        <div class="product_heading mb-0" style="display: inline-block">
-                        <h2>
-                            <a class="nav-link" href="" style="color: white">    <%=product %> </a>
-                        </h2>
-        </div>
-        <%})%>
-        <%} else {%>
-          <p>not found</p>
-        <%}%>
-      </div>
-    </section> 
+  
+     
+   <section class="product_section "style="display: inline;">
+    <div class="container" >
+              <% products.forEach(product => {%>
+              <div class="product_container product mb-0"  >
+                <div class="box" style="display: inline;">
+                  <div class="btn-box">
+                    <a href="" >
+                          <%=product %> 
+                    </a>
+                  </div>
+                </div>
+         
+              </div>      
+                <%})%>
+      
+    </div>
+  </section> 
+
   
   
    <!-- end client section -->

@@ -85,7 +85,7 @@ server.get('/products/category/:category',async(req, res, next) => {
   }
 });
 
-server.get('/products/:id', async (req, res, next) => {
+server.get('/products/:id[(0-9){0,10}]', async (req, res, next) => {
   try {
     const productId = req.params.id;
     let response = await axios.get(
