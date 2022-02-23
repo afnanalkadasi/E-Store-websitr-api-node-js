@@ -14,6 +14,7 @@ res.render('index', {products: response.data.products });
 
 server.get('/about',(req, res, next)  => {
   res.render('about');
+
 });
 
 server.get('/contact', (req, res, next) => {
@@ -42,9 +43,12 @@ server.get('/products/categories',async(req, res, next) => {
     );
     res.render('categories', {
       products: response2.data,
-    });
+      
+    }
+    );
   } catch (err) {
     console.log(err);
+  
   }
 });
 
@@ -67,10 +71,6 @@ server.get('/products/search', async (req, res, next) => {
     }
 });
   
-
-
-
-
 server.get('/products/category/:category',async(req, res, next) => {
   try { 
     const category = req.params.category;
